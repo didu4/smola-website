@@ -1,0 +1,73 @@
+@use "variables" as *;
+
+// --- Контейнер ---
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// --- Секция ---
+@mixin section {
+  padding: $spacing-3xl 0;
+}
+
+// --- Адаптивная сетка ---
+@mixin grid($cols: 3, $gap: $spacing-lg) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// --- Медиа-запросы ---
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile + 1px}) and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet + 1px}) {
+    @content;
+  }
+}
+
+// --- Логотип (шрифт + цвет) ---
+@mixin logo-font {
+  font-family: $font-family-logo;
+  color: $color-logo;
+}
+
+// --- Карточка (белая с тенью) ---
+@mixin card {
+  background: #ffffff;
+  border-radius: $border-radius-xl;
+  padding: $spacing-lg;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+// --- Кнопка (базовые стили) ---
+@mixin button-base {
+  padding: $spacing-md $spacing-lg;
+  border-radius: $border-radius-md;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}

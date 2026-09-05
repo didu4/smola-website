@@ -1,0 +1,93 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.header {
+  background-color: $color-secondary;
+  color: $color-secondary-foreground;
+  padding: $spacing-md 0;
+
+  .container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    @include logo-font;
+    font-size: $font-size-logo;
+    font-weight: bold;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xl;
+    font-size: $font-size-nav;
+
+    a {
+      color: white;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .burger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: $font-size-nav;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: $color-secondary;
+    padding: $spacing-xl;
+    z-index: 50;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+
+    &-close {
+      display: block;
+      margin-left: auto;
+      color: white;
+      font-size: 28px;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+      margin-top: $spacing-xl;
+      font-size: 24px;
+
+      a {
+        color: white;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+}

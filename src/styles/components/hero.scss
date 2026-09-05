@@ -1,0 +1,19 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+  background-color: $color-destructive;
+  color: $color-destructive-foreground;
+  text-align: center;
+  padding: $spacing-3xl 0;
+
+  h1 {
+    font-size: $font-size-hero-title;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    font-size: $font-size-hero-subtitle;
+  }
+}

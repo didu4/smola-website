@@ -1,0 +1,122 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.booking {
+  @include section;
+  background-color: $color-background;
+
+  .container {
+    @include container;
+    max-width: 672px; // ≈ 42rem
+  }
+
+  .booking-card {
+    background-color: $color-secondary;
+    border-radius: $border-radius-xl;
+    padding: $spacing-lg;
+
+    @include desktop {
+      padding: $spacing-2xl;
+    }
+
+    h2 {
+      font-size: $font-size-booking-title;
+      font-weight: 700;
+      text-align: center;
+      color: $color-secondary-foreground;
+      margin-bottom: $spacing-2xl;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+
+      .field {
+        .input {
+          width: 100%;
+          padding: $spacing-md $spacing-lg;
+          font-size: $font-size-form-input;
+          background-color: #ffffff;
+          color: $color-foreground;
+          border: 2px solid #ffffff;
+          border-radius: $border-radius-lg;
+          outline: none;
+          transition: box-shadow 0.2s;
+
+          &::placeholder {
+            color: rgba($color-foreground, 0.6);
+          }
+
+          &:focus {
+            box-shadow: 0 0 0 3px $color-primary;
+          }
+        }
+
+        .error {
+          color: #fca5a5; // красный на синем фоне
+          font-size: 14px;
+          margin-top: $spacing-xs;
+        }
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: $spacing-md;
+        font-size: $font-size-form-button;
+        background-color: $color-accent;
+        color: $color-accent-foreground;
+        border: none;
+        border-radius: $border-radius-lg;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: darken($color-accent, 10%);
+        }
+      }
+
+      .agreement {
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-md;
+        margin-top: $spacing-md;
+
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          background-color: #ffffff;
+          border: 2px solid #ffffff;
+          border-radius: $border-radius-sm;
+          accent-color: $color-primary;
+          cursor: pointer;
+          flex-shrink: 0;
+          margin-top: 2px;
+
+          &:checked {
+            background-color: $color-primary;
+            border-color: $color-primary;
+          }
+
+          &:focus {
+            box-shadow: 0 0 0 3px $color-primary;
+          }
+        }
+
+        label {
+          font-size: 14px;
+          color: rgba($color-secondary-foreground, 0.9);
+          cursor: pointer;
+          line-height: 1.4;
+        }
+      }
+
+      .agreement-error {
+        color: #fca5a5;
+        font-size: 14px;
+        margin-top: $spacing-xs;
+      }
+    }
+  }
+}

@@ -1,68 +1,45 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
+import "../../styles/components/header.scss";
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-secondary text-secondary-foreground border-b border-secondary/10">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Логотип */}
-        <div className="text-3xl font-bold text-logo font-pelowlava">СМОЛА</div>
+    <header className="header">
+      <div className="container">
+        <div className="logo">СМОЛА</div>
 
-        {/* Десктопная навигация */}
-        <nav className="hidden md:flex items-center gap-8 text-[32px] text-white">
-          <a href="#" className="hover:opacity-80 transition-opacity">
-            Курсы
-          </a>
-          <a href="#" className="hover:opacity-80 transition-opacity">
-            Статьи
-          </a>
-          <a href="#" className="hover:opacity-80 transition-opacity">
-            О нас
-          </a>
-          <Button variant="primary" className="rounded-xl">
+        <nav className="nav">
+          <a href="#">Курсы</a>
+          <a href="#">Статьи</a>
+          <a href="#">О нас</a>
+          <Button variant="primary" rounded>
             Записаться на занятие
           </Button>
         </nav>
 
-        {/* Бургер-меню (мобилка) */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMenuOpen(true)}
-        >
+        <button className="burger" onClick={() => setIsOpen(true)}>
           <Menu size={32} />
         </button>
       </div>
 
-      {/* Мобильное меню */}
-      {isMenuOpen && (
+      {isOpen && (
         <>
-          <div
-            className="fixed inset-0 bg-black/50 z-40"
-            onClick={() => setIsMenuOpen(false)}
-          />
-          <div className="fixed right-0 top-0 h-full w-64 bg-secondary z-50 p-6 shadow-xl">
+          <div className="overlay" onClick={() => setIsOpen(false)} />
+          <div className="mobile-menu">
             <button
-              onClick={() => setIsMenuOpen(false)}
-              className="ml-auto block text-white"
+              className="mobile-menu-close"
+              onClick={() => setIsOpen(false)}
             >
               <X size={28} />
             </button>
-            <nav className="flex flex-col gap-6 mt-8 text-2xl text-white">
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                Курсы
-              </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                Статьи
-              </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                О нас
-              </a>
-              <Button variant="primary" className="w-full text-center">
-                Записаться
-              </Button>
+            <nav>
+              <a href="#">Курсы</a>
+              <a href="#">Статьи</a>
+              <a href="#">О нас</a>
+              <Button variant="primary">Записаться</Button>
             </nav>
           </div>
         </>

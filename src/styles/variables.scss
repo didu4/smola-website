@@ -1,0 +1,67 @@
+// ===== ЦВЕТА (из макета) =====
+$color-background: #fef3f3;
+$color-foreground: #12101e;
+
+$color-secondary: #283283;
+$color-secondary-foreground: #ffffff;
+
+$color-accent: #ea5b27;
+$color-accent-foreground: #12101e;
+
+$color-destructive: #e84711;
+$color-destructive-foreground: #ffffff;
+
+$color-primary: #4d4495;
+$color-primary-foreground: #ffffff;
+
+$color-green: #b5ce3e;
+$color-green-foreground: #12101e;
+
+$color-footer: #12101e;
+$color-footer-foreground: #ffffff;
+
+$color-logo: #ef7523;
+
+// ===== ШРИФТЫ =====
+$font-family-base: "Raleway", sans-serif;
+$font-family-logo: "Pilowlava", cursive;
+
+// ===== РАЗМЕРЫ ШРИФТОВ =====
+$font-size-hero-title: 64px;
+$font-size-hero-subtitle: 20px;
+$font-size-section-title: 36px;
+$font-size-course-title: 24px;
+$font-size-course-description: 18px;
+$font-size-teacher-name: 28px;
+$font-size-teacher-role: 16px;
+$font-size-booking-title: 48px;
+$font-size-form-input: 32px;
+$font-size-form-button: 36px;
+$font-size-nav: 32px;
+$font-size-logo: 32px;
+
+// ===== ОТСТУПЫ =====
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$spacing-4xl: 80px;
+
+// ===== СКРУГЛЕНИЯ =====
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-30: 30px;
+$border-radius-full: 9999px;
+
+// ===== БРЕЙКПОИНТЫ =====
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1280px;
+
+// ===== КОНТЕЙНЕР =====
+$container-max-width: 1200px;

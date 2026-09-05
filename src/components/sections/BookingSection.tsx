@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Button } from "../ui/Button";
+import "../../styles/components/booking.scss";
 
 const bookingSchema = z.object({
   name: z.string().min(2, "Введите имя и фамилию"),
@@ -22,9 +22,7 @@ export const BookingSection = () => {
     reset,
   } = useForm<BookingFormData>({
     resolver: zodResolver(bookingSchema),
-    defaultValues: {
-      agreement: false,
-    },
+    defaultValues: { agreement: false },
   });
 
   const onSubmit = (data: BookingFormData) => {
@@ -34,81 +32,55 @@ export const BookingSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-background">
-      <div className="container mx-auto max-w-2xl">
-        {/* Синий блок */}
-        <div className="bg-secondary rounded-4xl p-6 md:p-8">
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-center mb-8 text-secondary-foreground">
-            Запишитесь на пробное занятие
-          </h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div>
+    <section className="booking">
+      <div className="container">
+        <div className="booking-card">
+          <h2>Запишитесь на пробное занятие</h2>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="field">
               <input
                 {...register("name")}
                 type="text"
                 placeholder="Имя Фамилия"
-                className="w-full px-4 py-3 text-2xl bg-white text-foreground placeholder:text-foreground/60 border-2 border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="input"
               />
-              {errors.name && (
-                <p className="text-red-300 text-sm mt-1">
-                  {errors.name.message}
-                </p>
-              )}
+              {errors.name && <p className="error">{errors.name.message}</p>}
             </div>
-            <div>
+            <div className="field">
               <input
                 {...register("email")}
                 type="email"
                 placeholder="example@email.com"
-                className="w-full px-4 py-3 text-2xl bg-white text-foreground placeholder:text-foreground/60 border-2 border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="input"
               />
-              {errors.email && (
-                <p className="text-red-300 text-sm mt-1">
-                  {errors.email.message}
-                </p>
-              )}
+              {errors.email && <p className="error">{errors.email.message}</p>}
             </div>
-            <div>
+            <div className="field">
               <input
                 {...register("phone")}
                 type="tel"
                 placeholder="+7 (000) 000-00-00"
-                className="w-full px-4 py-3 text-2xl bg-white text-foreground placeholder:text-foreground/60 border-2 border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="input"
               />
-              {errors.phone && (
-                <p className="text-red-300 text-sm mt-1">
-                  {errors.phone.message}
-                </p>
-              )}
+              {errors.phone && <p className="error">{errors.phone.message}</p>}
             </div>
 
-            <Button
-              type="submit"
-              variant="accent"
-              className="w-full text-2xl py-4 rounded-xl"
-            >
+            <button type="submit" className="submit-btn">
               Записаться на занятие
-            </Button>
+            </button>
 
-            {/* Чекбокс согласия */}
-            <div className="flex items-start gap-3 mt-4">
-              <div className="flex items-center h-6">
-                <input
-                  {...register("agreement")}
-                  type="checkbox"
-                  id="agreement"
-                  className="w-5 h-5 bg-white border-2 border-white rounded checked:bg-primary checked:border-primary focus:ring-2 focus:ring-primary cursor-pointer"
-                />
-              </div>
-              <label
-                htmlFor="agreement"
-                className="text-sm text-secondary-foreground/90 leading-tight cursor-pointer"
-              >
+            <div className="agreement">
+              <input
+                {...register("agreement")}
+                type="checkbox"
+                id="agreement"
+              />
+              <label htmlFor="agreement">
                 Нажимая кнопку, я соглашаюсь с политикой конфиденциальности
               </label>
             </div>
             {errors.agreement && (
-              <p className="text-red-300 text-sm">{errors.agreement.message}</p>
+              <p className="agreement-error">{errors.agreement.message}</p>
             )}
           </form>
         </div>
