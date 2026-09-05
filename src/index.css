@@ -1,50 +1,62 @@
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;900&display=swap");
+:root {
+  /* Основные цвета */
+  --background: #fef3f3;
+  --foreground: #12101e;
 
-@layer base {
-  :root {
-    --background: #fef3f3;
-    --foreground: #000000;
-    --primary: #4d4495;
-    --primary-foreground: #ffffff;
-    --secondary: #283284;
-    --secondary-foreground: #ffffff;
-    --accent: #ea5b27;
-    --accent-foreground: #ffffff;
-    --destructive: #e84711;
-    --destructive-foreground: #ffffff;
-    --footer: #12101e;
-    --footer-foreground: #ffffff;
-    --green: #b5ce3e;
-    --green-foreground: #ffffff;
-  }
+  /* Синий (хедер, блоки) */
+  --secondary: #283283;
+  --secondary-foreground: #ffffff;
 
-  body {
-    font-family: "Raleway", sans-serif;
-    background-color: var(--background);
-    color: var(--foreground);
-  }
+  /* Оранжевый основной (кнопки) */
+  --accent: #ea5b27;
+  --accent-foreground: #12101e;
+
+  /* Оранжевый яркий (Hero) */
+  --destructive: #e84711;
+  --destructive-foreground: #ffffff;
+
+  /* Фиолетовый (кнопка в хедере, поля формы) */
+  --primary: #4d4495;
+  --primary-foreground: #ffffff;
+
+  /* Зелёный (кнопка на странице курса) */
+  --green: #b5ce3e;
+  --green-foreground: #12101e;
+
+  /* Футер */
+  --footer: #12101e;
+  --footer-foreground: #ffffff;
+
+  /* Оранжевый логотип */
+  --logo: #ef7523;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  --color-footer: var(--footer);
-  --color-footer-foreground: var(--footer-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --color-green: var(--green);
   --color-green-foreground: var(--green-foreground);
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-logo: var(--logo);
 }
 
-/* Кастомные классы для шрифтов */
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
 @layer utilities {
   .font-pelowlava {
     font-family: "Pelowlava", cursive;
