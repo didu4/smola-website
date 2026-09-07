@@ -7,16 +7,24 @@
 
   .container {
     @include container;
-    max-width: 672px; // ≈ 42rem
+    display: flex;
+    justify-content: center;
+  }
+
+  .booking-wrapper {
+    width: 100%;
+    max-width: 860px;
+    min-height: 430px;
   }
 
   .booking-card {
     background-color: $color-secondary;
     border-radius: 40px;
     padding: $spacing-2xl $spacing-3xl;
-    max-width: 860px; // 👈 НЕ ШИРЕ МАКЕТА
-    min-height: 430px; // 👈 НЕ МЕНЬШЕ МАКЕТА
-    margin: 0 auto; // 👈 ЦЕНТРИРУЮ
+    width: 100%;
+    min-height: 430px;
+    box-sizing: border-box;
+
     @include desktop {
       padding: $spacing-2xl $spacing-3xl;
     }
@@ -39,15 +47,16 @@
           width: 100%;
           padding: $spacing-md $spacing-lg;
           font-size: $font-size-form-input;
-          background-color: #ffffff;
-          color: $color-foreground;
-          border: 2px solid #ffffff;
-          border-radius: $border-radius-lg;
+          background-color: $color-primary;
+          color: $color-secondary-foreground;
+          border: 2px solid $color-primary;
+          border-radius: 15px;
           outline: none;
           transition: box-shadow 0.2s;
+          box-sizing: border-box;
 
           &::placeholder {
-            color: rgba($color-foreground, 0.6);
+            color: $color-secondary-foreground;
           }
 
           &:focus {
@@ -56,7 +65,7 @@
         }
 
         .error {
-          color: #fca5a5; // красный на синем фоне
+          color: #fca5a5;
           font-size: 14px;
           margin-top: $spacing-xs;
         }
@@ -69,7 +78,7 @@
         background-color: $color-accent;
         color: $color-accent-foreground;
         border: none;
-        border-radius: $border-radius-lg;
+        border-radius: $border-radius-30;
         font-weight: 500;
         cursor: pointer;
         transition: background-color 0.2s;
@@ -95,6 +104,7 @@
           cursor: pointer;
           flex-shrink: 0;
           margin-top: 2px;
+          box-sizing: border-box;
 
           &:checked {
             background-color: $color-primary;

@@ -34,55 +34,61 @@ export const BookingSection = () => {
   return (
     <section className="booking">
       <div className="container">
-        <div className="booking-card">
-          <h2>Запишитесь на пробное занятие</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="field">
-              <input
-                {...register("name")}
-                type="text"
-                placeholder="Имя Фамилия"
-                className="input"
-              />
-              {errors.name && <p className="error">{errors.name.message}</p>}
-            </div>
-            <div className="field">
-              <input
-                {...register("email")}
-                type="email"
-                placeholder="example@email.com"
-                className="input"
-              />
-              {errors.email && <p className="error">{errors.email.message}</p>}
-            </div>
-            <div className="field">
-              <input
-                {...register("phone")}
-                type="tel"
-                placeholder="+7 (000) 000-00-00"
-                className="input"
-              />
-              {errors.phone && <p className="error">{errors.phone.message}</p>}
-            </div>
+        <div className="booking-wrapper">
+          <div className="booking-card">
+            <h2>Запишитесь на пробное занятие</h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="field">
+                <input
+                  {...register("name")}
+                  type="text"
+                  placeholder="Имя Фамилия"
+                  className="input"
+                />
+                {errors.name && <p className="error">{errors.name.message}</p>}
+              </div>
+              <div className="field">
+                <input
+                  {...register("email")}
+                  type="email"
+                  placeholder="example@email.com"
+                  className="input"
+                />
+                {errors.email && (
+                  <p className="error">{errors.email.message}</p>
+                )}
+              </div>
+              <div className="field">
+                <input
+                  {...register("phone")}
+                  type="tel"
+                  placeholder="+7 (000) 000-00-00"
+                  className="input"
+                />
+                {errors.phone && (
+                  <p className="error">{errors.phone.message}</p>
+                )}
+              </div>
 
-            <button type="submit" className="submit-btn">
-              Записаться на занятие
-            </button>
+              <button type="submit" className="submit-btn">
+                Записаться на занятие
+              </button>
 
-            <div className="agreement">
-              <input
-                {...register("agreement")}
-                type="checkbox"
-                id="agreement"
-              />
-              <label htmlFor="agreement">
-                Нажимая кнопку, я соглашаюсь с политикой конфиденциальности
-              </label>
-            </div>
-            {errors.agreement && (
-              <p className="agreement-error">{errors.agreement.message}</p>
-            )}
-          </form>
+              <div className="agreement">
+                <input
+                  {...register("agreement")}
+                  type="checkbox"
+                  id="agreement"
+                />
+                <label htmlFor="agreement">
+                  Нажимая кнопку, я соглашаюсь с политикой конфиденциальности
+                </label>
+              </div>
+              {errors.agreement && (
+                <p className="agreement-error">{errors.agreement.message}</p>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </section>
