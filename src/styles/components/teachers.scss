@@ -11,7 +11,7 @@
 
   .section-title {
     font-size: $font-size-section-title;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
     margin-bottom: $spacing-2xl;
   }
@@ -24,10 +24,10 @@
     text-align: center;
 
     .avatar {
-      width: 96px;
-      height: 128px;
+      width: 250px;
+      height: 280px;
       background-color: #d1d5db;
-      border-radius: $border-radius-md;
+      border-radius: $border-radius-30;
       margin: 0 auto $spacing-md;
       display: flex;
       align-items: center;
@@ -45,7 +45,7 @@
 
     h3 {
       font-size: $font-size-teacher-name;
-      font-weight: 700;
+      font-weight: 500;
     }
 
     p {

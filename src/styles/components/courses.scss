@@ -11,7 +11,7 @@
 
   .section-title {
     font-size: $font-size-section-title;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
     margin-bottom: $spacing-2xl;
   }
@@ -22,7 +22,7 @@
 
   .course-card {
     background-color: $color-accent;
-    border-radius: $border-radius-xl;
+    border-radius: $border-radius-30;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
@@ -38,24 +38,28 @@
 
     .content {
       padding: $spacing-lg;
+      border-radius: $border-radius-30;
 
       h3 {
         font-size: $font-size-course-title;
-        font-weight: 700;
+        font-weight: 500;
         color: $color-accent-foreground;
         margin-bottom: $spacing-sm;
+        text-align: center;
       }
 
       p {
         font-size: $font-size-course-description;
         color: $color-accent-foreground;
         margin-bottom: $spacing-sm;
+        text-align: center;
       }
 
       .duration {
         font-size: 14px;
         font-weight: 500;
         color: rgba($color-accent-foreground, 0.8);
+        text-align: center;
       }
     }
   }

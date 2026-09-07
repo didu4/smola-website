@@ -11,6 +11,12 @@
     display: flex;
     flex-direction: column;
     gap: $spacing-2xl;
+  }
+
+  .footer-main {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2xl;
 
     @include desktop {
       flex-direction: row;
@@ -35,10 +41,6 @@
   .nav-block,
   .contacts-block {
     text-align: center;
-
-    @include desktop {
-      text-align: left;
-    }
 
     h4 {
       font-weight: 600;
@@ -66,10 +68,6 @@
     justify-content: center;
     gap: $spacing-md;
     margin-top: $spacing-md;
-
-    @include desktop {
-      justify-content: flex-start;
-    }
 
     a {
       display: flex;

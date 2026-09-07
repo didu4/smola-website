@@ -12,11 +12,13 @@
 
   .booking-card {
     background-color: $color-secondary;
-    border-radius: $border-radius-xl;
-    padding: $spacing-lg;
-
+    border-radius: 40px;
+    padding: $spacing-2xl $spacing-3xl;
+    max-width: 860px; // 👈 НЕ ШИРЕ МАКЕТА
+    min-height: 430px; // 👈 НЕ МЕНЬШЕ МАКЕТА
+    margin: 0 auto; // 👈 ЦЕНТРИРУЮ
     @include desktop {
-      padding: $spacing-2xl;
+      padding: $spacing-2xl $spacing-3xl;
     }
 
     h2 {
