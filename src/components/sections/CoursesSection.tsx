@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Course } from "../../types";
 import "../../styles/components/courses.scss";
 
@@ -12,14 +13,18 @@ export const CoursesSection = ({ courses }: CoursesSectionProps) => {
         <h2 className="section-title">Программы обучения</h2>
         <div className="grid">
           {courses.map((course) => (
-            <div key={course.id} className="course-card">
+            <Link
+              to={`/courses/${course.id}`}
+              key={course.id}
+              className="course-card"
+            >
               <div className="image">Фото курса</div>
               <div className="content">
                 <h3>{course.title}</h3>
                 <p>{course.description}</p>
                 <div className="duration">{course.duration}</div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

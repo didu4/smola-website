@@ -3,6 +3,7 @@ export interface Teacher {
   name: string;
   role: string;
   photo?: string;
+  description?: string;
 }
 
 export interface Course {

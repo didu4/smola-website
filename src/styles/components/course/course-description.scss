@@ -1,0 +1,45 @@
+@use "../../variables" as *;
+@use "../../mixins" as *;
+
+.course-description {
+  background-color: $color-background;
+  padding: $spacing-3xl 0;
+
+  @include mobile {
+    padding: $spacing-2xl $spacing-md;
+  }
+
+  .container {
+    @include container;
+  }
+
+  h2 {
+    font-size: $font-size-section-title;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: $spacing-xl;
+    color: $color-foreground;
+
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .description-text {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    p {
+      font-size: $font-size-course-description;
+      line-height: 1.7;
+      color: $color-foreground;
+      text-align: left;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+@use "../../variables" as *;
+@use "../../mixins" as *;
+
+.course-teacher-section {
+  background-color: $color-background;
+  padding: $spacing-3xl 0;
+
+  @include mobile {
+    padding: $spacing-2xl $spacing-md;
+  }
+
+  .container {
+    @include container;
+  }
+
+  h2 {
+    font-size: $font-size-section-title;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: $spacing-xl;
+    color: $color-foreground;
+
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .teacher-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-lg;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .teacher-card {
+    background-color: $color-secondary;
+    color: $color-secondary-foreground;
+    border-radius: $border-radius-30;
+    padding: $spacing-2xl;
+
+    @include mobile {
+      padding: $spacing-lg;
+    }
+  }
+
+  .teacher-content {
+    display: flex;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .teacher-photo {
+    flex-shrink: 0;
+    width: 160px;
+    height: 200px;
+    background-color: #d1d5db;
+    border-radius: $border-radius-xl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: #6b7280;
+    overflow: hidden;
+
+    @include mobile {
+      width: 100%;
+      height: 200px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .teacher-info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    h3 {
+      font-size: $font-size-teacher-name;
+      font-weight: 500;
+      color: $color-secondary-foreground;
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+
+    .teacher-role {
+      font-size: $font-size-course-description;
+      color: $color-secondary-foreground;
+      line-height: 1.5;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    .teacher-description {
+      font-size: 14px;
+      color: rgba($color-secondary-foreground, 0.9);
+      line-height: 1.6;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .gallery-card {
+    background-color: #ffffff;
+    border-radius: $border-radius-30;
+    padding: $spacing-2xl;
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      padding: $spacing-lg;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 500;
+      color: $color-foreground;
+      margin-bottom: $spacing-lg;
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-grow: 1;
+  }
+
+  .carousel {
+    display: flex;
+    gap: $spacing-md;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    flex-grow: 1;
+    padding-bottom: $spacing-sm;
+
+    /* Скрыть скроллбар */
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .carousel-slide {
+    flex: 0 0 80%;
+    height: 180px;
+    background-color: #e5e7eb;
+    border-radius: $border-radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #6b7280;
+    scroll-snap-align: center;
+
+    @include mobile {
+      flex: 0 0 85%;
+      height: 150px;
+    }
+  }
+
+  .carousel-arrow {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: $border-radius-full;
+    background-color: $color-secondary;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}

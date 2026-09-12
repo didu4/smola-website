@@ -1,14 +1,10 @@
-// 1. Переменные и миксины
 @use "variables";
 @use "mixins";
 
-// 2. Базовые стили
 @use "base";
 
-// 3. Подключение шрифтов
 @use "fonts";
 
-// 4. Стили компонентов
 @use "components/button";
 @use "components/header";
 @use "components/footer";
@@ -16,3 +12,8 @@
 @use "components/courses";
 @use "components/teachers";
 @use "components/booking";
+
+@use "components/course/course-hero";
+@use "components/course/course-description";
+@use "components/course/course-info";
+@use "components/course/course-teacher-section";
