@@ -18,6 +18,11 @@
 
   .grid {
     @include grid(4);
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-md;
+    }
   }
 
   .teacher-card {
@@ -36,6 +41,11 @@
       color: #6b7280;
       overflow: hidden;
 
+      @include mobile {
+        width: 100%;
+        height: 180px;
+      }
+
       img {
         width: 100%;
         height: 100%;
@@ -46,12 +56,20 @@
     h3 {
       font-size: $font-size-teacher-name;
       font-weight: 500;
+
+      @include mobile {
+        font-size: 18px;
+      }
     }
 
     p {
       font-size: $font-size-teacher-role;
       color: rgba($color-foreground, 0.8);
       margin-top: $spacing-xs;
+
+      @include mobile {
+        font-size: 12px;
+      }
     }
   }
 }

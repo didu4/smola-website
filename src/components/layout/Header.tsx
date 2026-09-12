@@ -11,6 +11,12 @@ export const Header = () => {
       <div className="container">
         <div className="logo">СМОЛА</div>
 
+        <div className="header-button-mobile">
+          <Button variant="primary" rounded>
+            Записаться
+          </Button>
+        </div>
+
         <nav className="nav">
           <a href="#">Курсы</a>
           <a href="#">Статьи</a>
@@ -39,7 +45,6 @@ export const Header = () => {
               <a href="#">Курсы</a>
               <a href="#">Статьи</a>
               <a href="#">О нас</a>
-              <Button variant="primary">Записаться</Button>
             </nav>
           </div>
         </>

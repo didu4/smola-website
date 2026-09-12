@@ -26,6 +26,12 @@
   }
 
   .logo-block {
+    text-align: center;
+
+    @include desktop {
+      text-align: left;
+    }
+
     h3 {
       font-size: 24px;
       font-weight: 700;
@@ -41,6 +47,10 @@
   .nav-block,
   .contacts-block {
     text-align: center;
+
+    @include desktop {
+      text-align: left;
+    }
 
     h4 {
       font-weight: 600;
@@ -69,6 +79,10 @@
     gap: $spacing-md;
     margin-top: $spacing-md;
 
+    @include desktop {
+      justify-content: flex-start;
+    }
+
     a {
       display: flex;
       align-items: center;
@@ -93,7 +107,6 @@
   .copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: $spacing-lg;
-    margin-top: $spacing-lg;
     text-align: center;
     font-size: 12px;
     opacity: 0.6;

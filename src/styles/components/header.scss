@@ -11,12 +11,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: $spacing-md;
+    }
   }
 
   .logo {
     @include logo-font;
     font-size: $font-size-logo;
     font-weight: bold;
+  }
+
+  .header-button-mobile {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      justify-content: center;
+
+      .button {
+        font-size: 14px;
+        padding: $spacing-sm $spacing-md;
+        white-space: nowrap;
+      }
+    }
   }
 
   .nav {
@@ -32,6 +54,7 @@
         opacity: 0.8;
       }
     }
+
     .button {
       font-size: $font-size-nav;
       font-weight: 400;
@@ -51,6 +74,7 @@
 
     @include mobile {
       display: block;
+      justify-self: end;
     }
   }
 

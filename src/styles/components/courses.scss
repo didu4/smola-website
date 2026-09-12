@@ -18,6 +18,22 @@
 
   .grid {
     @include grid(3);
+
+    @include mobile {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: $spacing-md;
+      padding-bottom: $spacing-md;
+      margin: 0 (-$spacing-md);
+      padding-left: $spacing-md;
+      padding-right: $spacing-md;
+
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   .course-card {
@@ -25,6 +41,11 @@
     border-radius: $border-radius-30;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    @include mobile {
+      flex: 0 0 85%;
+      scroll-snap-align: center;
+    }
 
     .image {
       height: 192px;
