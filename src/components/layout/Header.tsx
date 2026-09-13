@@ -11,19 +11,17 @@ export const Header = () => {
 
   const handleCoursesClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsOpen(false); // закрываем мобильное меню
+    setIsOpen(false);
 
     if (location.pathname === "/") {
-      // Уже на главной — просто скроллим
       const element = document.getElementById("courses");
       element?.scrollIntoView({ behavior: "smooth" });
     } else {
-      // На другой странице — переходим на главную и скроллим
       navigate("/");
       setTimeout(() => {
         const element = document.getElementById("courses");
         element?.scrollIntoView({ behavior: "smooth" });
-      }, 100); // небольшая задержка, чтобы главная успела отрендериться
+      }, 100);
     }
   };
 

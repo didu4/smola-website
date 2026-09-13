@@ -1,18 +1,15 @@
 @use "variables" as *;
 
-// --- Контейнер ---
 @mixin container {
   max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 $spacing-md;
 }
 
-// --- Секция ---
 @mixin section {
   padding: $spacing-3xl 0;
 }
 
-// --- Адаптивная сетка ---
 @mixin grid($cols: 3, $gap: $spacing-lg) {
   display: grid;
   grid-template-columns: repeat($cols, 1fr);
@@ -27,7 +24,6 @@
   }
 }
 
-// --- Медиа-запросы ---
 @mixin mobile {
   @media (max-width: $breakpoint-mobile) {
     @content;
@@ -46,13 +42,11 @@
   }
 }
 
-// --- Логотип (шрифт + цвет) ---
 @mixin logo-font {
   font-family: $font-family-logo;
   color: $color-logo;
 }
 
-// --- Карточка (белая с тенью) ---
 @mixin card {
   background: #ffffff;
   border-radius: $border-radius-xl;
@@ -62,7 +56,6 @@
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-// --- Кнопка (базовые стили) ---
 @mixin button-base {
   padding: $spacing-md $spacing-lg;
   border-radius: $border-radius-md;
