@@ -8,7 +8,7 @@ interface CoursesSectionProps {
 
 export const CoursesSection = ({ courses }: CoursesSectionProps) => {
   return (
-    <section className="courses">
+    <section className="courses" id="courses">
       <div className="container">
         <h2 className="section-title">Программы обучения</h2>
         <div className="grid">
